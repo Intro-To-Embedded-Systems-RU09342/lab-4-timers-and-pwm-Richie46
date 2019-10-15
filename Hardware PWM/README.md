@@ -1,15 +1,1 @@
-# Hardware PWM
-Now that you have done the software version of PWM, it is time to start leveraging other features of these Timer Modules.
-
-## Task
-Replicate the same behavior as in the software PWM, but by using the Timer Modules ability to directly output to a GPIO Pin instead of managing them in software. One way to think about this is: unless there are other functions running in your code, your system should initialize, set the Timer Modules, and then turn off the CPU.
-
-## Deliverables
-You will need to have two folders in this repository, one for each of the processors that you used for this part of the lab. Remember to replace this README with your own.
-
-### Hints
-Read up on the P1SEL registers as well as look at the Timer modules ability to multiplex.
-
-## Extra Work
-### Using ACLK
-Some of these microprocessors have a built in ACLK which is extremely slow compared to the up to 25MHz available on some of them. What is the overall impact on the system when using this clock? Can you actually use your PWM code with a clock that slow?
+The goal of this assignment is to make a program that will turn an LED on at 50% duty cycle, and increase it by 10% everytime a button is pressed. This would increase the brightness until it was at 100%, then turn off the LED and begin the process again from 0% duty cycle. In addition to this, the button's signal was also debounced to ensure better performance. For this, a timer was used in order to debounce the button, and another timer was set up to use the built in pwm function. This was done by simply chosing an LED that was compatible with the built in pwm signal and selecting the pwm mode for that pin. The differences between the FR and G2 boards were just the pin numbers that were compatible with the built in pwm feature. 
